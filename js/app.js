@@ -9,17 +9,26 @@ class Gotchi {
 
 };
 
+$('#input-box').val();
+
+$('#submit-btn').on('click', () => { 
+    
+$('#name').text('Name: ' + $('#input-box').val())
+
+
+ });
+
+
 const game = {
 	hunger: 1,
 	sleepiness: 1,
 	boredom: 1,
 	age: 0
 
-	setUpRound(){
-}
 
+};
 const joshagotchi = new Gotchi();
 
-const $hunger = $('.hunger');
+
 
 
