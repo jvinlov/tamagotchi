@@ -1,11 +1,16 @@
-$('button').on('click', () => {
+$('.begin').on('click', () => {
   
   game.setAge();
   game.setHunger();
   game.setBoredom();
   game.setSleepiness();
+  // game.buttons ();
+  
 
 });
+
+	
+
 
 class Gotchi {
 	constructor () {
@@ -33,7 +38,8 @@ const game = {
 	boredom: 1,
 	age: 0,
 
-	
+
+
 	setAge () {
 
 	const interval = setInterval(() => { 
@@ -41,51 +47,75 @@ const game = {
           this.age++
        
         $('#age').text(`Age: ${this.age}`);
-	 }, 60000);
+        if (this.age >=2 && this.age <4) {
+        	$('img').attr("src", "https://i.pinimg.com/originals/bd/ce/47/bdce478c4108aee6d2ac5843d966938d.jpg");
+        }
+        if(this.age >=4) {
+        	$('img').attr("src", "https://media3.giphy.com/media/4eBH2WQPLULLi/source.gif");
+        	$('img').css("height", "350px")
+        }
+	 }, 600);
   
     },
 
     setHunger () {
+
+    	
+
     	const interval = setInterval(() => { 
-	const $hunger = $('#hunger');
+		const $hunger = $('#hunger');
           this.hunger++
        
         $('#hunger').text(`Hunger: ${this.hunger}`);
         if(this.hunger ===10) {
     		alert("Tummy rumblers - I died of hunger!");
-    		
+    		clearInterval(interval);
     	}
 	 }, 5000);
+
+    	$('#food').on('click', () => {
+			this.hunger --;
+			$('#hunger').text(`Hunger: ${this.hunger}`);
+		});
     },
 
     setSleepiness () {
+    	$('#lights').on('click', () => {
+			this.sleepiness --;
+			$('#sleepiness').text(`Sleepiness: ${this.sleepiness}`);
+	});
+
     	const interval = setInterval(() => { 
-	const $sleepiness = $('#sleepiness');
+		const $sleepiness = $('#sleepiness');
           this.sleepiness++
        
         $('#sleepiness').text(`Sleepiness: ${this.sleepiness}`);
 	 	if(this.sleepiness ===10 ) {
     		alert("Too...much...coding... I died of sleepiness");
+    		clearInterval(interval);
     	}
 	 }, 7500);
     },
 
     setBoredom () {
+    	$('#play').on('click', () => {
+			
+			this.boredom --;
+			$('#boredom').text(`boredom: ${this.boredom}`);
+	});
+
     	const interval = setInterval(() => { 
 		const $boredom = $('#boredom');
           
           this.boredom++
-       
+       		
         	$('#boredom').text(`boredom: ${this.boredom}`);
         	if(this.boredom ===10) {
     		alert("Can you die of boredom? I did!");
+    		clearInterval(interval);
     	}
-	 }, 6435);
+	 }, 6430);
     },
-
-    
-    
-
 };
 const joshagotchi = new Gotchi();
 
