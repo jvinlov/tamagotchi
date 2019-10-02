@@ -4,6 +4,7 @@ $('button').on('click', () => {
   game.setHunger();
   game.setBoredom();
   game.setSleepiness();
+
 });
 
 class Gotchi {
@@ -32,6 +33,7 @@ const game = {
 	boredom: 1,
 	age: 0,
 
+	
 	setAge () {
 
 	const interval = setInterval(() => { 
@@ -49,6 +51,10 @@ const game = {
           this.hunger++
        
         $('#hunger').text(`Hunger: ${this.hunger}`);
+        if(this.hunger ===10) {
+    		alert("Tummy rumblers - I died of hunger!");
+    		
+    	}
 	 }, 5000);
     },
 
@@ -58,17 +64,27 @@ const game = {
           this.sleepiness++
        
         $('#sleepiness').text(`Sleepiness: ${this.sleepiness}`);
-	 }, 10000);
+	 	if(this.sleepiness ===10 ) {
+    		alert("Too...much...coding... I died of sleepiness");
+    	}
+	 }, 7500);
     },
 
     setBoredom () {
     	const interval = setInterval(() => { 
-	const $boredom = $('#boredom');
+		const $boredom = $('#boredom');
+          
           this.boredom++
        
-        $('#boredom').text(`boredom: ${this.boredom}`);
+        	$('#boredom').text(`boredom: ${this.boredom}`);
+        	if(this.boredom ===10) {
+    		alert("Can you die of boredom? I did!");
+    	}
 	 }, 6435);
-    }
+    },
+
+    
+    
 
 };
 const joshagotchi = new Gotchi();
