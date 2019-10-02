@@ -1,8 +1,9 @@
 $('button').on('click', () => {
-  console.log('button works')
-  // invoke our function to intialize our squares
   
-  game.setTimer();
+  game.setAge();
+  game.setHunger();
+  game.setBoredom();
+  game.setSleepiness();
 });
 
 class Gotchi {
@@ -29,21 +30,46 @@ const game = {
 	hunger: 1,
 	sleepiness: 1,
 	boredom: 1,
-	time: 0,
 	age: 0,
 
-	setTimer () {
+	setAge () {
 
-const interval = setInterval(() => { 
+	const interval = setInterval(() => { 
 	const $age = $('#age');
           this.age++
        
         $('#age').text(`Age: ${this.age}`);
 	 }, 60000);
   
+    },
 
+    setHunger () {
+    	const interval = setInterval(() => { 
+	const $hunger = $('#hunger');
+          this.hunger++
+       
+        $('#hunger').text(`Hunger: ${this.hunger}`);
+	 }, 5000);
+    },
 
+    setSleepiness () {
+    	const interval = setInterval(() => { 
+	const $sleepiness = $('#sleepiness');
+          this.sleepiness++
+       
+        $('#sleepiness').text(`Sleepiness: ${this.sleepiness}`);
+	 }, 10000);
+    },
+
+    setBoredom () {
+    	const interval = setInterval(() => { 
+	const $boredom = $('#boredom');
+          this.boredom++
+       
+        $('#boredom').text(`boredom: ${this.boredom}`);
+	 }, 6435);
     }
+
 };
 const joshagotchi = new Gotchi();
 
