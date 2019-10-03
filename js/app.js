@@ -1,10 +1,13 @@
 $('.begin').on('click', () => {
   
+ 
   game.setAge();
   game.setHunger();
   game.setBoredom();
   game.setSleepiness();
-  // game.buttons ();
+  game.animation();
+
+
   
 
 });
@@ -26,7 +29,10 @@ $('#input-box').val();
 
 $('#submit-btn').on('click', () => { 
     
-$('#name').text('Name: ' + $('#input-box').val())
+$('#name').text('Welcome ' + $('#input-box').val())
+
+$('#input-box').remove();
+$('#submit-btn').remove();
 
 
  });
@@ -39,7 +45,9 @@ const game = {
 	age: 0,
 	gameOver: false,
 
-
+	animation () {
+		$('img').css({'animation-name': 'yes', 'animation-duration': '5s', 'animation-iteration-count': 'infinite'});
+	},
 
 	setAge () {
 
@@ -61,7 +69,7 @@ const game = {
         	$('img').attr("src", "https://media3.giphy.com/media/4eBH2WQPLULLi/source.gif");
         	$('img').css("height", "350px")
         }
-	 }, 900);
+	 }, 3000);
   
     },
 
@@ -81,7 +89,7 @@ const game = {
     		$('img').css("animation-iteration-count", "0");
     		clearInterval(interval);
     	}
-	 }, 1000);
+	 }, 2000);
 
     	$('#food').on('click', () => {
 			this.hunger --;
@@ -109,7 +117,7 @@ const game = {
     		$('img').css("animation-iteration-count", "0");
     		clearInterval(interval);
     	}
-	 }, 750);
+	 }, 1450);
     },
 
     setBoredom () {

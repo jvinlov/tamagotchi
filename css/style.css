@@ -2,13 +2,14 @@ body {
 	text-align:center;
 	background-image: url("https://us.123rf.com/450wm/nachai/nachai1607/nachai160700093/60742632-defocused-or-blurred-photo-of-food-court-and-wood-table-top-use-for-background-.jpg?ver=6");
 	background-size: cover;
+
 }
 
 @keyframes yes{
 
 	0%   {left: 0px;}
-  25%  {left: 1000px;}
-  50%  {left: 1000px;}
+  25%  {left: 800px;}
+  50%  {left: 500px;}
   100% {left: 0px;}
 }
 
@@ -19,9 +20,28 @@ img {
     left: 0px;
     width: 200px;
   	height: 200px;
- 	animation-name: yes;
- 	animation-duration: 5s;
- 	animation-iteration-count: infinite;
   	border-radius: 10px;
 }
 
+#name {
+	font-family:  Indie Flower, sans-serif;
+	font-weight: bold;
+	font-size: 4em;
+	color: #4A52FF;
+	background-image: linear-gradient(yellow, white);
+	
+	border-radius: 8px;
+
+}
+
+.statsContainer{
+	background-image: linear-gradient(orange, yellow); 
+	font-size: 2.5em;
+	font-family: Monoton, sans-serif;
+	position: fixed;
+	right: 0;
+	border-radius: 8px;
+}
+.stats {
+
+}
