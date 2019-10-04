@@ -92,15 +92,20 @@ const game = {
 	 }, 2000);
 
     	$('#food').on('click', () => {
+    		if (this.hunger>1){
 			this.hunger --;
 			$('#hunger').text(`Hunger: ${this.hunger}`);
+		}
 		})
     },
 
     setSleepiness () {
     	$('#lights').on('click', () => {
-			this.sleepiness --;
+			if(this.sleepiness>1){
+				this.sleepiness --;
+			
 			$('#sleepiness').text(`Sleepiness: ${this.sleepiness}`);
+			}
 	})
 
     	const interval = setInterval(() => { 
@@ -122,9 +127,10 @@ const game = {
 
     setBoredom () {
     	$('#play').on('click', () => {
-			
+			if(this.boredom>1){
 			this.boredom --;
 			$('#boredom').text(`Boredom: ${this.boredom}`);
+		}
 	})
 
     	const interval = setInterval(() => { 
